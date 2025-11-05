@@ -1,18 +1,23 @@
 import { Page, Locator } from '@playwright/test';
 
 export class SauceDemoPage {
-  readonly page: Page;
-  readonly username: Locator;
-  readonly password: Locator;
-  readonly loginButton: Locator;
-  readonly addToCart: Locator;
-  readonly shoppingCart: Locator;
-  readonly checkout: Locator;
-  readonly firstName: Locator;
-  readonly lastName: Locator;
-  readonly postalCode: Locator;
-  readonly continueButton: Locator;
-  readonly finishButton: Locator;
+   page: Page;
+   username: Locator;
+   password: Locator;
+   loginButton: Locator;
+   addToCart: Locator;
+   shoppingCart: Locator;
+   checkout: Locator;
+   firstName: Locator;
+   lastName: Locator;
+   postalCode: Locator;
+   continueButton: Locator;
+   finishButton: Locator;
+   checkoutInfo: Locator;
+   totalPrice: Locator;
+   thankYou: Locator;
+
+   //ne treba ti readonly, to zapravo znači da se taj locator ne može mjenjati što nema smisla
 
   constructor(page: Page) {
     this.page = page;
@@ -27,7 +32,14 @@ export class SauceDemoPage {
     this.postalCode = page.locator('[data-test="postalCode"]');
     this.continueButton = page.locator('[data-test="continue"]');
     this.finishButton = page.locator('[data-test="finish"]');
+    this.checkoutInfo = page.locator('[data-test="title"]');
+    this.totalPrice = page.locator('[data-test="total-info-label"]');
+    this.thankYou = page.locator('[data-test="complete-header"]');
+
   }
+
+  //ovi lokatori svi su data-test, to je odlično, tako treba, naći neki unikatni locator da
+    // bude sve isto
 
   async goto() {
     await this.page.goto('https://www.saucedemo.com/');
