@@ -3,4 +3,3 @@ export function randomString(length = 8): string {
     return Array.from({ length }, () => chars[Math.floor(Math.random() * chars.length)]).join('');
 }
 
-//funkcija koja uzima proizvoljno neka slova da popuni naše fildove u testu

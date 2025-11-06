@@ -17,7 +17,6 @@ export class SauceDemoPage {
    totalPrice: Locator;
    thankYou: Locator;
 
-   //ne treba ti readonly, to zapravo znači da se taj locator ne može mjenjati što nema smisla
 
   constructor(page: Page) {
     this.page = page;
@@ -37,9 +36,6 @@ export class SauceDemoPage {
     this.thankYou = page.locator('[data-test="complete-header"]');
 
   }
-
-  //ovi lokatori svi su data-test, to je odlično, tako treba, naći neki unikatni locator da
-    // bude sve isto
 
   async goto() {
     await this.page.goto('https://www.saucedemo.com/');

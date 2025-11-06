@@ -24,19 +24,22 @@ checkout flow, and validation messages.
 This repository demonstrates **automated QA testing** using the **Playwright** framework.  
 The tests verify key functionalities of a demo web shop, including:
 
-- Logging in with valid credentials  
-- Adding and removing products from the cart  
-- Completing checkout steps  
-- Displaying validation messages for input fields  
+- Logging into the application  
+- Adding products to the shopping cart  
+- Completing the checkout process  
+- Verifying “Thank You” and confirmation messages  
+- Using **random test data** for form fields  
+
 
 ---
 
 ## ✨ Features
 
 - 🔹 Playwright E2E tests  
-- 🔹 Page Object Model structure  
-- 🔹 Automated testing of inputs, buttons, and navigation  
-- 🔹 Test execution in Chrome browser  
+- 🔹 Page Object Model structure (POM)  
+- 🔹 Reusable test utility for random data generation  
+- 🔹 Automatic test execution in Chromium, Firefox, and WebKit  
+- 🔹 Option to run headless or with visible browser  
 
 ---
 
@@ -75,5 +78,8 @@ npx playwright test --headed
 tests/
  ├── pages/
  │    └── saucedemo.page.ts
- └── specs/
-      └── saucedemo.spec.ts
+ ├── specs/
+ │    └── saucedemo.spec.ts
+ └── utility/
+      └── random.ts
+
